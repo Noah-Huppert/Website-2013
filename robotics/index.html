@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+		<style>
+			a {
+				color: #636363;
+				text-decoration: none;
+			}
+			#topBar {
+				height: 150px;
+				background: #FFFFFF;
+			}
+			#topBarPicture {
+				height: 100px;
+				background: #FFFFFF;
+			}
+			#teamLogo {
+				height: 50px;
+				margin-top: 30px;
+				line-height: 50px;
+				font-size: 30px;
+				float: left;
+			}
+			#firstLogo {
+				width: 100px;
+				height: 100px;
+				float: left;
+			}
+			#headerPicture {
+				margin-top: 50px;
+				text-align: center;
+				font-size: 30px;
+				float: left;
+			}
+			#topBarMenu {
+				width: 550px;
+				height: 50px;
+				margin: auto;
+				background: #FCFCFC;
+			}
+			.topBarOption:hover {
+				font-size: 24px;
+			}
+			.topBarOption {
+				height: 50px;
+				line-height: 50px;
+				margin-left: 30px;
+				font-family: Yanone Kaffeesatz;
+				font-size: 20px;
+				text-align: center;
+				float: left;
+			}
+			#turnTable {
+				width: 100%;
+				height: 350px;
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #F0F0F0;
+			}
+			.turnTableControllArrow {
+				width: 60px;
+				height: 120px;
+				z-index: 2;
+				position: absolute;
+				background: none;
+				border-radius: 5px;
+				text-align: center;
+				line-height: 120px;
+				font-size: 40px;
+				font-family: Karla;
+				color: #E8E8E8;
+				cursor: pointer;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			.turnTableControllArrow:hover {
+				background: #FCFCFC;
+			}
+			.turnTableElement {
+				width: 40%;
+				height: 80%;
+				margin-top: 2.5%;
+				position: absolute;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #8F8F8F;
+				text-decoration: none;
+			}
+			.turnTableElementTitle {
+				padding-left: 10px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				font-size: 24px;
+				font-family: Pompiere;
+				background: #FAFAFA;
+				opacity: 0.5;
+				color: #000000;
+			}
+			.turnTableElementContent {
+				width: 100%;
+				height: 50%;
+				margin: auto;
+				margin-left: 20px;
+				font-size: 18px;
+				font-family: Karla;
+				color: #919191;
+				text-align: left;
+				font-style: italic;
+			}
+			.turnTableElementTag {
+				width: 100%;
+				padding-top: 10px;
+				padding-left: 10px;
+				color: #919191;
+				font-family: Karla;
+				border-top-style: solid;
+				border-top-width: 1px;
+				border-top-color: #F7F7F7;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			.bottomBar {
+				width: 100%;
+				color: #E6E6E6;
+				font-family: Yanone Kaffeesatz;
+				background: #1A1A1A;
+			}
+			#bottomBarGradiant {
+				background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#1A1A1A));
+			}
+			#bottomBarContent {
+				background: #1A1A1A;
+			}
+			#usageDiscalimer {
+				padding-top: 10px;
+				text-align: center;
+				background: #1A1A1A;
+			}
+			.bottomBarItem {
+				height: 30px;
+				line-height: 30px;
+				padding-top: 10px;
+				background: #1A1A1A;
+				font-style: italic;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			#bottomBarItemsWraper {
+				width: 300px;
+				margin: auto;
+				background: #1A1A1A;
+				height: 1%;
+				overflow: hidden;
+			}
+			#aboutMe {
+				width: 50%;
+				margin: auto;
+				margin-top: 80px;
+			}
+			#aboutMeTitle {
+				font-family: Yanone Kaffeesatz;
+				font-size: 24px;
+				text-align: center;
+				margin-top: 10px;
+			}
+			#aboutMeContent {
+				font-family: Karla;
+			}
+		</style>
+	</head>
+	<body onload="init();" style="margin: 0;">
+		<div id='topBar'>
+			<div id="topBarPicture">
+				<div id='teamLogo'>
+					Team Logo
+				</div>
+				<img id='firstLogo' src="first-robotics-logo.jpg" />
+				<div id="headerPicture">
+					<-- ik this isnt the logo ||| Picture of team doing something impressive looking
+				</div>
+			</div>
+			<div id="topBarBackground" style="background: #FCFCFC;">
+				<div id="topBarMenu">
+					<div class="topBarOption">
+						<a href="index.html">Home</a>
+					</div>
+					<div class="topBarOption">
+						<a href="About Us.html">About us</a>
+					</div>
+					<div class="topBarOption">
+						<a href="Challenge.html">The Challenge</a>
+					</div>
+					<div class="topBarOption">
+						<a href="Events.html">Events</a>
+					</div>
+					<div class="topBarOption">
+						<a href="http://www.lsrhs.net">LSRHS</a>
+					</div>
+					<div class="topBarOption">
+						<a href="Team Portal.html">Team Portal</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="turnTable">
+			<div class='turnTableControllArrow' id='turnTableConrtollArrowLeft'>
+				<
+			</div>
+			<div class='turnTableControllArrow' id='turnTableConrtollArrowRight'>
+				>
+			</div>
+			</a>
+			<a id='turnTableElement1' class='turnTableElement'>
+			<div class="turnTableElementTitle">
+				5th recent
+			</div> <strong style="font-size: 50px; color: #525252;">Team Picture</strong> </a>
+			</a>
+			<a id='turnTableElement2' class='turnTableElement'>
+			<div class="turnTableElementTitle">
+				4th recent
+			</div> <strong style="font-size: 50px; color: #525252;">Team Picture</strong> </a>
+			</a>
+			<a id='turnTableElement3' class='turnTableElement'>
+			<div class="turnTableElementTitle">
+				3rd recent
+			</div> <strong style="font-size: 50px; color: #525252;">Team Picture</strong> </a>
+			</a>
+			<a id='turnTableElement4' class='turnTableElement'>
+			<div class="turnTableElementTitle">
+				2nd recent
+			</div> <strong style="font-size: 50px; color: #525252;">Team Picture</strong> </a>
+			</a>
+			<a id='turnTableElement5' class='turnTableElement'>
+			<div class="turnTableElementTitle">
+				Most recent
+			</div> <strong style="font-size: 50px; color: #525252;">Team Picture</strong> </a>
+		</div>
+
+		<div id="aboutMe">
+			<div id="aboutMeTitle">
+				<strong>About Us</strong>
+			</div>
+			<div id="aboutMeContent">
+				We are the <i>&lt;team name&gt;</i> from <a href='http://www.lsrhs.net'>Lincoln Sudbury High School</a>. &lt;A brief description of our team writen by someone who is better at writing&gt;
+				Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa
+				Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa
+				Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa Blaa
+			</div>
+		</div>
+
+		<div class="bottomBar">
+			<div id="bottomBarGradiant">
+				&nbsp;
+			</div>
+			<div id="bottomBarContent">
+				<div id="usageDiscalimer">
+					&copy;Noah Huppert. All code on the LSRHS Robotics site is coded by Noah Huppert. Do not distribute or claim as your own.
+				</div>
+				<div id='bottomBarItemsWraper'>
+					<span style='float: left;' class='bottomBarItem'> <a style='color: #E6E6E6; text-decoration: none;' href="contactMe.php">Contact Us</a> </span>
+				</div>
+
+			</div>
+		</div>
+		<script>
+			var turnTableElement;
+			var turnTableElementLeftNum;
+			var turnTableElementRightNum;
+			var turnTableElementRightNumPre;
+			var turnTableElementCenter;
+			var turnTableElementLeft;
+			var turnTableElementRight;
+			var turnTableElementRightPre;
+			var date = new Date();
+			var year = date.getFullYear();
+			var tableMovedRecently = false;
+			function init() {
+				//Setting minum viewing width
+				if ($(window).width() < 950) {
+					$('body').css({
+						'width' : '950px'
+					});
+				}
+				if ($(window).width() > 950) {
+					$('body').css({
+						'width' : $(window).width(),
+						'overflow-x' : 'hidden'
+					});
+				}
+
+				$('.turnTableElement').css({
+					'height' : ($('#turnTable').height() * 75) / 100
+				});
+
+				//Top Bar
+				$('#topBarBackground').css({
+					'width' : $(window).width()
+				});
+
+				//Turn table
+				turnTableElement = 5;
+				turnTableElementLeftNum = turnTableElement - 1;
+				turnTableElementRightNum = turnTableElement + 1;
+				turnTableElementRightNumPre = turnTableElementRightNum + 1;
+				turnTableElementCenter = '#turnTableElement5'
+				turnTableElementLeft = '#turnTableElement4';
+				turnTableElementRight = '#turnTableElement1';
+				turnTableElementRightPre = '#turnTableElement' + turnTableElementRightNumPre;
+				$('.turnTableElement').hide();
+				$(turnTableElementCenter).show();
+				$(turnTableElementLeft).show();
+				$(turnTableElementRight).show();
+
+				$((":hidden" )).css({
+					'left' : (($(window).width() - $('.turnTableElement').width()) / 2) - (2 * ($('.turnTableElement').width()) + 75)
+				});
+				$(turnTableElementCenter).animate({
+					left : ($(window).width() - $('.turnTableElement').width()) / 2,
+					opacity : '1'
+				}, 0);
+				$(turnTableElementLeft).animate({
+					left : (($(window).width() - $('.turnTableElement').width()) / 2) - ($('.turnTableElement').width() + 75),
+					opacity : '0.4'
+				}, 0);
+				$(turnTableElementRight).animate({
+					left : (($(window).width() - $('.turnTableElement').width()) / 2) + ($('.turnTableElement').width() + 75),
+					opacity : '0.4'
+				}, 0);
+				turnTableElement = turnTableElement - 1;
+				checkTurnTableLimits();
+				turnTableElementLeftNum = turnTableElement - 1;
+				turnTableElementRightNum = turnTableElement + 1;
+				checkTurnTableLimits();
+				turnTableElementRightNumPre = turnTableElementRightNum + 1;
+
+				//Turn Table Element Content
+				$('.turnTableElementContent').css({
+					'margin-top' : ($('.turnTableElement').height() - $('.turnTableElementContent').height()) / 3
+				});
+
+				//Turn Table Controll Arows
+				$('#turnTableConrtollArrowLeft').css({
+					'margin-top' : ($('#turnTable').height() - 120) / 2,
+					'margin-left' : (($(window).width() - $('.turnTableElement').width()) / 2) - 65
+				});
+				$('#turnTableConrtollArrowRight').css({
+					'margin-top' : ($('#turnTable').height() - 120) / 2,
+					'margin-left' : (($(window).width() + $('.turnTableElement').width()) / 2)
+				});
+				$('#turnTableConrtollArrowLeft').bind('click', function(event) {
+					iterateCarosel('back');
+				});
+				$('#turnTableConrtollArrowRight').bind('click', function(event) {
+					iterateCarosel('forward');
+				});
+				$('.turnTableControllArrow').mouseout(function() {
+					tableMovedRecently = false;
+				});
+				$('.turnTableControllArrow').mouseover(function() {
+					tableMovedRecently = true;
+				});
+
+				//Bottom Bar
+				var bottomBarMarginTop;
+				if (($('body').height() + 75) < $(window).height()) {
+					bottomBarMarginTop = ($(window).height() - $('body').height()) + $('.bottomBar').height();
+				}
+				if (($('body').height() + 75) > $(window).height()) {
+					bottomBarMarginTop = 80;
+				}
+				$('.bottomBar').css({
+					'margin-top' : bottomBarMarginTop
+				});
+			}
+
+			//Turn Table
+			window.setInterval(function() {
+				if (tableMovedRecently == false) {
+					iterateCarosel('forward');
+				}
+			}, 5000);
+
+			function iterateCarosel(direction) {
+				if (direction == 'back') {
+					turnTableElement = turnTableElement + 1;
+					checkTurnTableLimits();
+					turnTableElementLeftNum = turnTableElement + 1;
+					turnTableElementRightNum = turnTableElement - 1;
+					checkTurnTableLimits();
+					turnTableElementRightNumPre = turnTableElementRightNum - 1;
+					checkTurnTableLimits();
+					turnTableElementCenter = '#turnTableElement' + turnTableElement.toString();
+					turnTableElementRight = '#turnTableElement' + turnTableElementLeftNum.toString();
+					turnTableElementLeft = '#turnTableElement' + turnTableElementRightNum.toString();
+					turnTableElementRightPre = '#turnTableElement' + turnTableElementRightNumPre.toString();
+
+				}
+				if (direction == 'forward') {
+					turnTableElement = turnTableElement - 1;
+					checkTurnTableLimits();
+					turnTableElementLeftNum = turnTableElement - 1;
+					turnTableElementRightNum = turnTableElement + 1;
+					checkTurnTableLimits();
+					turnTableElementRightNumPre = turnTableElementRightNum + 1;
+					checkTurnTableLimits();
+					turnTableElementCenter = '#turnTableElement' + turnTableElement.toString();
+					turnTableElementLeft = '#turnTableElement' + turnTableElementLeftNum.toString();
+					turnTableElementRight = '#turnTableElement' + turnTableElementRightNum.toString();
+					turnTableElementRightPre = '#turnTableElement' + turnTableElementRightNumPre.toString();
+				}
+
+				$('.turnTableElement').hide();
+				$(turnTableElementCenter).show();
+				$(turnTableElementLeft).show();
+				$(turnTableElementRight).show();
+				$(turnTableElementRightPre).show();
+				$((":hidden" )).css({
+					'left' : (($(window).width() - $('.turnTableElement').width()) / 2) - (2 * ($('.turnTableElement').width()) + 75)
+				});
+				$(turnTableElementCenter).animate({
+					left : ($(window).width() - $('.turnTableElement').width()) / 2,
+					opacity : '1'
+				}, 500);
+				$(turnTableElementLeft).animate({
+					left : (($(window).width() - $('.turnTableElement').width()) / 2) - ($('.turnTableElement').width() + 75),
+					opacity : '0.4'
+				}, 500);
+				$(turnTableElementRightPre).animate({
+					left : (($(window).width() - $('.turnTableElement').width()) / 2) + (2 * ($('.turnTableElement').width()) + 75),
+					opacity : '0.4'
+				}, 500);
+				$(turnTableElementRight).animate({
+					left : (($(window).width() - $('.turnTableElement').width()) / 2) + ($('.turnTableElement').width() + 75),
+					opacity : '0.4'
+				}, 500);
+
+			}
+
+			function checkTurnTableLimits() {
+				switch(turnTableElement) {
+					case 0:
+						turnTableElement = 5;
+						break;
+
+					case 6:
+						turnTableElement = 1;
+						break;
+				}
+				switch(turnTableElementRightNumPre) {
+					case 0:
+						turnTableElementRightNumPre = 5;
+						break;
+
+					case 6:
+						turnTableElementRightNumPre = 1;
+						break;
+				}
+				switch(turnTableElementLeftNum) {
+					case 0:
+						turnTableElementLeftNum = 5;
+						break;
+
+					case 6:
+						turnTableElementLeftNum = 1;
+						break;
+				}
+				switch(turnTableElementRightNum) {
+					case 0:
+						turnTableElementRightNum = 5;
+						break;
+
+					case 6:
+						turnTableElementRightNum = 1;
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>

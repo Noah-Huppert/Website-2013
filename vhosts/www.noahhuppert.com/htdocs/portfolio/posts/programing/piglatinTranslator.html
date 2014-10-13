@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<style>
+			body {
+				background: #FFFFFF;
+			}
+			#inputContainer {
+				background: #EDEDED;
+				width: 70%;
+				margin: auto;
+				border-radius: 5px;
+				width: 450px;
+				z-index: 1;
+			}
+			#languageContainer {
+				background: #CCCCCC;
+				width: 65px;
+				border-radius: 2px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+				text-align: center;
+			}
+			#languageSelectContainer {
+				width: 140px;
+				margin: auto;
+			}
+			h1 {
+				color: #545454;
+				text-align: center;
+			}
+			#textAreaContainer {
+				padding: auto;
+				text-align: center;
+			}
+			#translateButton {
+				text-align: center;
+				width: 140px;
+				margin: auto;
+				background: #008CFF;
+				width: 75px;
+				border-radius: 2px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+				color: #FFFFFF;
+			}
+			#translateButton:hover {
+				background: #007DE3;
+			}
+
+			#optionsBox {
+				background: #D9D9D9;
+				z-index: 2;
+				width: 130px;
+				height: 45px;
+				padding-top: 5px;
+				border-radius: 3px;
+				margin-left: 15px;
+			}
+			#piglatinEncryption:hover {
+				background: #E6E6E6;
+				border-radius: 3px;
+				width: 125px;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="post">
+			<div class="postTitle">
+				<strong>Pig Latin Translator</strong>
+			</div>
+			<div class="postContent">
+				<div class="postMetaData">
+					Catagory: <i>Programing</i>
+					<br>
+					Date Completed: <i>8/14/13</i>
+					<br>
+					Developers: <i>Noah Huppert</i>
+					<br>
+					Download
+				</div>
+				
+				Lately I have been experimenting with varous methods of encryption. I have tried PGP for email both on android using <i>APG</i> and <i>K9-Mail</i> and on the desktop using a wonderfull chrome plugin
+				<i>Mymail-Crypt for Gmail</i>. So I thought I would give encrytion a try, except on a lower level.
+				<br>
+				<br>
+				I present to you, the Pig Latin Translator:
+				<br>
+				How to use:
+				<ul>
+					<li>Type in your phrase to translate into Pig Latin</li>
+					<li><i>Optional: </i>change the method of Pig Latin Encryption for ending in <i>"A"</i> or <i>"Ay"</i></li>
+					<li>Hit <i>"Translate"</i></li>
+					<li><i>Optional: </i>click <i>"Piglatin"</i> or <i>"English"</i> to change the box input types so you can translate from Piglatin to English</li>
+				</ul>
+				<br>
+				<br>
+				<div id="inputContainer">
+					<h1>Pig Latin Translater</h1>
+
+					<div id="optionsBox">
+						<div class="A" id="piglatinEncryption">
+							A: <i style="font-size:12px;"> Piglatin -> iglatinpay</i>
+						</div>
+						<div class="Ay" id="piglatinEncryption">
+							Ay: <i style="font-size:12px;"> Piglatin -> iglatinpa</i>
+						</div>
+
+					</div>
+					<i id="changePiglatin" style="float: left; padding-left: 10px; color: #BABABA; font-size: 12px; padding-top: 2px;">Choose piglatin encryption</i>
+					<div id="languageSelectContainer">
+						<div class="piglatin" id="languageContainer" style="float: left;">
+							<strong>English</strong>
+						</div>
+						<div class="english" id="languageContainer" style="float: right;">
+							<strong>PigLatin</strong>
+						</div>
+					</div>
+					<div id="textAreaContainer">
+						<textarea id="toTranslate" ROWS=6></textarea>
+						<textarea id="translated" ROWS=6></textarea>
+					</div>
+					<div id="translateButton">
+						<strong>Translate</strong>
+					</div>
+					<i style="color: #BABABA; text-align: center; color: #BABABA;">Coded By Noah Huppert</i>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$('#optionsBox').hide();
+
+			var piglatinEndingWord = 'ay';
+			var translating = 'piglatin';
+			switched = false;
+			var wordCounter = 0;
+			$('#translateButton').click(function() {
+				wordCounter = 0;
+				if (translating == 'piglatin') {
+					var toTranslate = $('#toTranslate').val();
+					var toTranslateArray = toTranslate.split(" ");
+					var toTranslateFirstLetter = [];
+					while (toTranslateArray.length > wordCounter) {
+						toTranslateFirstLetter[wordCounter] = toTranslateArray[wordCounter].charAt(0);
+						toTranslateArray[wordCounter] = toTranslateArray[wordCounter].substring(1, toTranslateArray[wordCounter].length);
+						//
+						toTranslateArray[wordCounter] = toTranslateArray[wordCounter].concat(toTranslateFirstLetter[wordCounter]);
+						toTranslateArray[wordCounter] = toTranslateArray[wordCounter].concat(piglatinEndingWord);
+						toTranslateArray[wordCounter] = toTranslateArray[wordCounter].slice(0);
+						//$("#translated").html(toTranslateArray[wordCounter]);
+						//alert(toTranslateArray[wordCounter].concat(toTranslateFirstLetter[wordCounter]));
+						wordCounter = wordCounter + 1;
+					}
+
+				}
+
+				if (translating == 'english') {
+					var toTranslate = $('#toTranslate').val();
+					var toTranslateArray = toTranslate.split(" ");
+					var toTranslateFirstLetter = [];
+					var toTranslateBase = [];
+					while (toTranslateArray.length > wordCounter) {
+						toTranslateFirstLetter[wordCounter] = toTranslateArray[wordCounter].slice(toTranslateArray[wordCounter].length - piglatinEnding, toTranslateArray[wordCounter].length - (piglatinEnding - 1));
+						toTranslateArray[wordCounter] = toTranslateArray[wordCounter].substr(0, toTranslateArray[wordCounter].length - piglatinEnding);
+						toTranslateArray[wordCounter] = toTranslateFirstLetter[wordCounter] + toTranslateArray[wordCounter];
+						wordCounter = wordCounter + 1;
+					}
+				}
+
+				$("#translated").html(toTranslateArray.join(' '));
+
+				if (toTranslateArray.length == wordCounter) {
+					wordCounter = 0;
+				}
+			});
+
+			$('#changePiglatin').click(function() {
+				$('#optionsBox').toggle('slow');
+			});
+
+			$('.A').click(function() {
+				piglatinEnding = 2;
+				piglatinEndingWord = 'a';
+				$('#optionsBox').hide('slow');
+			});
+
+			$('.Ay').click(function() {
+				piglatinEnding = 3;
+				piglatinEndingWord = 'ay';
+				$('#optionsBox').hide('slow');
+			});
+
+			$('.piglatin').click(function() {
+				if (translating == 'piglatin' && switched == false) {
+					$('.piglatin').html('<strong>English</strong>');
+					$('.english').html('<strong>Piglatin</strong>');
+					translating = 'english';
+					switched = true;
+				}
+
+				if (translating == 'english' && switched == false) {
+					$('.piglatin').html('<strong>Piglatin</strong>');
+					$('.english').html('<strong>English</strong>');
+					translating = 'piglatin';
+					switched = true;
+				}
+				switched = false;
+			});
+
+			$('.english').click(function() {
+				if (translating == 'piglatin' && switched == false) {
+					$('.piglatin').html('<strong>English</strong>');
+					$('.english').html('<strong>Piglatin</strong>');
+					translating = 'english';
+					switched = true;
+				}
+
+				if (translating == 'english' && switched == false) {
+					$('.piglatin').html('<strong>Piglatin</strong>');
+					$('.english').html('<strong>English</strong>');
+					translating = 'piglatin';
+					switched = true;
+				}
+				switched = false;
+			});
+
+		</script>
+	</body>
+</html>

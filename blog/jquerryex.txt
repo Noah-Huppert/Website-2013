@@ -1,0 +1,24 @@
+<html>
+    <head>
+    <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+    <p id="divBarTrigger">Hover over me to see the div bar</p>
+        <div id="divBarContainer">
+        </div>
+
+        <script>
+            $('#divBarTrigger').mouseenter.(function(){
+                $('#divBarContainer').css({
+                    'opacity' : '1'
+                });
+            });
+
+            $('#divBarContainer').mouseleave.(function(){
+                $('#divBarContainer').css({
+                    'opacity' : '0'
+                });
+            });
+        </script>
+    </body>
+    </html>

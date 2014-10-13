@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="jquery-1.9.1.min.js"></script>
+		<style>
+			#fixed {
+				position: absolute;
+			}
+
+			#fixedPrograming {
+				position: absolute;
+				padding-left: 145px;
+				z-index: 2;
+				display: none;
+			}
+
+			#fixedAnimation {
+				position: absolute;
+				padding-left: 145px;
+				z-index: 3;
+				display: none;
+			}
+
+			#fixedRobotics {
+				position: absolute;
+				padding-left: 145px;
+				z-index: 4;
+				display: none;
+			}
+
+			#fixedOther {
+				position: absolute;
+				padding-left: 145px;
+				z-index: 5;
+				display: none;
+			}
+
+			#navBar {
+				width: 135px;
+				padding-left: 10px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-size: 17px;
+				background-color: #000000;
+				color: #fff;
+			}
+
+			#navBar:hover {
+				background-color: #3B2E32;
+			}
+
+			#navBarCatagory {
+				width: 135px;
+				padding-left: 10px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-size: 17px;
+				background-color: #000000;
+				color: #fff;
+			}
+
+			#navBarCatagoryPrograming {
+				width: 135px;
+				padding-left: 10px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-size: 17px;
+				background-color: #000000;
+				color: #fff;
+			}
+
+			#navBarCatagoryAnimation {
+				width: 135px;
+				padding-left: 10px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-size: 17px;
+				background-color: #000000;
+				color: #fff;
+			}
+
+			#navBarCatagoryRobotics {
+				width: 135px;
+				padding-left: 10px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-size: 17px;
+				background-color: #000000;
+				color: #fff;
+			}
+
+			#navBarCatagoryOther {
+				width: 135px;
+				padding-left: 10px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-size: 17px;
+				background-color: #000000;
+				color: #fff;
+			}
+
+			#navBarCatagory:hover {
+				background-color: #3B2E32;
+			}
+
+			#navArrow {
+				padding-right: 5px;
+				float: right;
+				color: #FFFFFF;
+				padding-top: 5px;
+			}
+
+			#navSideBar {
+				background-color: #FF0000;
+				float: right;
+				width: 20px;
+				height: 25px;
+				padding-top: 5px;
+			}
+		</style>
+	</head>
+	<body style="height: 10000px;">
+		<div id="fixed">
+			<div id="navSideBar">
+				&nbsp;
+			</div>
+			<div id="navBar">
+				Home
+			</div>
+
+			<div id="navSideBar">
+				&nbsp;
+			</div>
+			<div id="navBar">
+				Project Select
+			</div>
+			<div >
+				<div id="fixedPrograming">
+					<div id="navBarCatagory">
+						Other
+					</div>
+	
+					<div id="navBarCatagory">
+						Other
+					</div>
+
+					<div id="navBarCatagory">
+						Other
+					</div>
+				</div>
+			</div>
+
+			<div id="navSideBar">
+				&nbsp;
+			</div>
+			<div id="navArrow">
+				&#187;
+			</div>
+			<div id="navBarCatagoryPrograming">
+				Programing
+			</div>
+
+			<div id="fixedAnimation">
+				<div id="navBarCatagory">
+					Other
+				</div>
+
+				<div id="navBarCatagory">
+					Other
+				</div>
+
+				<div id="navBarCatagory">
+					Other
+				</div>
+			</div>
+
+			<div id="navSideBar">
+				&nbsp;
+			</div>
+			<div id="navArrow">
+				&#187;
+			</div>
+			<div id="navBarCatagoryAnimation">
+				Animation
+			</div>
+
+			<div id="fixedRobotics">
+				<div id="navBarCatagory">
+					Other
+				</div>
+
+				<div id="navBarCatagory">
+					Other
+				</div>
+
+				<div id="navBarCatagory">
+					Other
+				</div>
+			</div>
+
+			<div id="navSideBar">
+				&nbsp;
+			</div>
+			<div id="navArrow">
+				&#187;
+			</div>
+			<div id="navBarCatagoryRobotics">
+				Robotics
+			</div>
+
+			<div id="fixedOther">
+				<div id="navBarCatagory">
+					Other
+				</div>
+
+				<div id="navBarCatagory">
+					Other
+				</div>
+
+				<div id="navBarCatagory">
+					Other
+				</div>
+			</div>
+
+			<div id="navSideBar">
+				&nbsp;
+			</div>
+			<div id="navArrow">
+				&#187;
+			</div>
+			<div id="navBarCatagoryOther">
+				Other
+			</div>
+		</div>
+
+		<script>
+			(function($) {
+				$.fn.extend({
+					center : function() {
+						return this.each(function() {
+							var top = ($(window).height() - $(this).outerHeight()) / 2;
+							top += document.body.scrollTop;
+							$(this).css({
+								position : 'absolute',
+								margin : 0,
+								top : (top > 0 ? top : 0) + 'px'
+							});
+						});
+					}
+				});
+			})(jQuery);
+
+			$('#fixed').center();
+			$(window).scroll(function() {
+				$('#fixed').center();
+			});
+
+			$('#navBarCatagoryPrograming').mouseenter(function() {
+				$('#fixedPrograming').css({'display' : 'inline'});
+				$('#fixedAnimation').css({'display' : 'none'});
+				$('#fixedRobotics').css({'display' : 'none'});
+				$('#fixedOther').css({'display' : 'none'});
+			});
+			
+			$('#navBarCatagoryAnimation').mouseenter(function() {
+				$('#fixedAnimation').css({'display' : 'inline'});
+				$('#fixedPrograming').css({'display' : 'none'});
+				$('#fixedRobotics').css({'display' : 'none'});
+				$('#fixedOther').css({'display' : 'none'});
+			});
+			
+			$('#navBarCatagoryRobotics').mouseenter(function() {
+				$('#fixedRobotics').css({'display' : 'inline'});
+				$('#fixedPrograming').css({'display' : 'none'});
+				$('#fixedAnimation').css({'display' : 'none'});
+				$('#fixedOther').css({'display' : 'none'});
+			});
+			
+			$('#navBarCatagoryOther').mouseenter(function() {
+				$('#fixedOther').css({'display' : 'inline'});
+				$('#fixedPrograming').css({'display' : 'none'});
+				$('#fixedAnimation').css({'display' : 'none'});
+				$('#fixedRobotics').css({'display' : 'none'});
+			});
+			
+			$('#fixed').mouseleave(function() {
+				$('#fixedPrograming').css({'display' : 'none'});
+				$('#fixedAnimation').css({'display' : 'none'});
+				$('#fixedRobotics').css({'display' : 'none'});
+				$('#fixedOther').css({'display' : 'none'});
+			});
+		</script>
+
+	</body>
+</html>

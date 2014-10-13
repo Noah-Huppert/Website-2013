@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<style>
+			#title {
+				margin-top: 30px;
+				font-size: 35px;
+				font-style: italic;
+				color: #545454;
+				text-align: center;
+			}
+			#postCreationContainer {
+				margin-top: 20px;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #DBDBDB;
+				border-radius: 5px;
+				box-shadow: 1px 1px 1px #DBDBDB;
+			}
+			#postInput {
+				margin-left: 100px;
+				padding-top: 20px;
+				font-size: 20px;
+				font-style: italic;
+				color: #525252;
+			}
+			#postTitle {
+				border-style: solid;
+				border-width: 2px;
+				border-color: #CCCCCC;
+				border-radius: 5px;
+				font-size: 15px;
+				outline: none;
+			}
+			#postContent {
+				border-style: solid;
+				border-width: 2px;
+				border-color: #CCCCCC;
+				border-radius: 5px;
+				font-size: 15px;
+				resize: none;
+				outline: none;
+			}
+			#completetionDate {
+				border-style: solid;
+				border-width: 2px;
+				border-color: #CCCCCC;
+				border-radius: 5px;
+				font-size: 15px;
+				font-style: italic;
+				color: #525252;
+				text-align: center;
+				outline: none;
+				float: left;
+			}
+			#developers {
+				float: right;
+				margin-top: -22.5px;
+				margin-right: 100px;
+			}
+			#developersInput {
+				width: 275px;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #CCCCCC;
+				border-radius: 5px;
+				font-size: 15px;
+				font-style: italic;
+				color: #525252;
+				outline: none;
+			}
+			#createPostButton {
+				background: #EBEBEB;
+				color: #545454;
+				text-align: center;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #6E6E6E;
+				border-radius: 5px;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 16px;
+				margin-top: 10px;
+				margin-left: 195px;
+				margin-bottom: 10px;
+			}
+			#previewPostButton {
+				background: #EBEBEB;
+				color: #545454;
+				text-align: center;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #6E6E6E;
+				border-radius: 5px;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 16px;
+				margin-top: -44px;
+				margin-left: 305px;
+				margin-bottom: 10px;
+			}
+			#catagory {
+				margin-left: 250px;
+				margin-top: 5px;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #CCCCCC;
+				border-radius: 5px;
+				font-size: 15px;
+				font-style: italic;
+				color: #525252;
+				outline: none;
+			}
+			.codeContainer {
+				width: 360px;
+				margin: auto;
+				margin-bottom: 20px;
+			}
+			.codeWraper {
+				width: 300px;
+				height: 25px;
+				line-height: 25px;
+				float: left;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #C5C5C5;
+				border-left-style: none;
+				border-bottom-right-radius: 3px;
+				border-top-right-radius: 3px;
+				float: right;
+			}
+			.fileCode {
+				width: 205px;
+				height: 20px;
+				line-height: 20px;
+				border-style: none;
+				outline: none;
+				margin-left: 10px;
+				margin-top: 0px;
+			}
+			#indexFileCodeButton {
+				width: 60px;
+				height: 25px;
+				font-size: 15px;
+				line-height: 25px;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #C5C5C5;
+				border-radius: 3px;
+				background: #EDEDED;
+				text-align: center;
+				font-family: Helvetica, arial, freesans, clean, sans-serif;
+				color: #4A4A4A float : left;
+			}
+			.codeButton {
+				width: 80px;
+				font-size: 14px;
+				font-family: Helvetica, arial, freesans, clean, sans-serif;
+				background: #EDEDED;
+				border-left-style: solid;
+				border-left-width: 1px;
+				border-left-color: #C5C5C5;
+				text-align: center;
+				float: right;
+			}
+			#indexFileCodeButton:hover {
+				background: #E0E0E0;
+			}
+			.instructions {
+				margin-top: 30px;
+				margin-bottom: 10px;
+				text-align: left;
+				font-size: 18px;
+			}
+			.instructionsTitle {
+				font-size: 20px;
+				text-align: left;
+				margin-bottom: 5px;
+				font-style: italic;
+			}
+			#generatedCode {
+				width: 60%;
+				margin: auto;
+			}
+			#editPostButton {
+				background: #EBEBEB;
+				color: #545454;
+				text-align: center;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #6E6E6E;
+				border-radius: 5px;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 16px;
+				margin: auto;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			.post {
+				width: 60%;
+				margin: auto;
+				padding-top: 10px;
+			}
+			.postTitle {
+				font-size: 34px;
+				font-style: italic;
+				padding-bottom: 20px;
+				text-align: center;
+			}
+			.postContent {
+				background: #FAFAFA;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #F2F2F2;
+				border-radius: 3px;
+				text-align: left;
+				padding-left: 25px;
+				padding-right: 25px;
+				padding-top: 25px;
+				padding-bottom: 25px;
+				color: #808080;
+			}
+			.postMetaData {
+				background: #FCFCFC;
+				width: 170px;
+				box-shadow: 0px 0px 5px #E3E3E3 inset;
+				border-radius: 2px;
+				font-size: 14px;
+				color: #CCCCCC;
+				text-align: center;
+				float: left;
+				margin-right: 25px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="title">
+			<strong>Post Creator</strong>
+		</div>
+		<div id="postCreationContainer">
+			<div id="postInput">
+				<strong>Completetion Date:</strong>
+				<br>
+				<input id="completetionDate" type="date" />
+				<div id="developers">
+					<strong>Developers:</strong>
+					<br>
+					<input id="developersInput" type="text" placeholder="Developers who worked on the project"/>
+				</div>
+				<br>
+				<br>
+				<strong>Post Title:</strong>
+				<br>
+				<input id="postTitle" type="text" placeholder="Your Awesome Title"/>
+				<br>
+				<br>
+				<strong>Post Content:</strong>
+				<br>
+				<textarea id="postContent" placeholder="Your Awesome Article"></textarea>
+				<br>
+				<select id="catagory">
+					<option  checked="checked" name="tag" type="radio" value="programing" id="programingRadio"/>
+					Programing
+					<option  name="tag" type="radio" value="animation" id="animationRadio"/>
+					Animation
+					<option  name="tag" type="radio" value="robotics" id="roboticsRadio"/>
+					Robotics
+					<option  name="tag" type="radio" value="other" id="otherRadio"/>
+					Other
+				</select>
+				<div id="createPostButton">
+					<strong> Create Post </strong>
+				</div>
+				<div id="previewPostButton">
+					<strong> Preview Post </strong>
+				</div>
+			</div>
+
+			<div id="previewPost">
+				
+			</div>
+
+			<div id="generatedCode">
+				<!--Header File-->
+				<div class="instructions">
+					<div class="instructionsTitle">
+						<strong> For the header file: </strong>
+					</div>
+					Paste the code below into your <i class="postCatagory">programing</i><i>.html</i> file which is located in <i>posts</i> folder, make sure to put the code below the most recent post.
+				</div>
+				<div class="codeContainer">
+					<div class="codeWraper">
+						<input id="headerCode" class="fileCode" onClick="this.select();"/>
+						<div id="copy" class="codeButton" onClick="document.getElementById('headerCode').select();">
+							<strong>Select</strong>
+						</div>
+					</div>
+					<div id="indexFileCodeButton">
+						<strong> Header </strong>
+					</div>
+				</div>
+				<!--Post File-->
+				<div class="instructions">
+					<div class="instructionsTitle">
+						<strong> For the post file: </strong>
+					</div>
+					Download and move this file to <i>posts/</i><i class="postCatagory">programing</i> or, copy the text below and then paste it into an <i>.html</i> document called <i class="postTitle"style="font-size: 18px;">postTitle</i><i>.html</i>,
+					then move the folder to <i>posts/</i><i class="postCatagory">programing</i>
+				</div>
+				<div class="codeContainer">
+					<div class="codeWraper">
+						<input id="postFileCode" class="fileCode"/>
+						<div id="download" class="codeButton">
+							<strong>Download</strong>
+						</div>
+					</div>
+					<div id="indexFileCodeButton">
+						<strong> Header </strong>
+					</div>
+				</div>
+				<div id="editPostButton">
+					Edit Post
+				</div>
+			</div>
+		</div>
+		<script>
+			var postName = "postName" + ".html";
+			var postTitle = "Post Name";
+			var postContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius ullamcorper dolor ac adipiscing. ' + 'Pellentesque orci neque, ultrices nec tincidunt a, consequat vitae elit. In eu laoreet sapien. Lorem ipsum dolor sit amet, ' + 'consectetur adipiscing elit. Sed venenatis pretium accumsan. Nam suscipit, augue eu cursus faucibus, dolor ante feugiat ante, ' + 'et lobortis turpis lacus ac diam. Vestibulum tincidunt urna sit amet leo ultrices volutpat eu a massa.';
+			var postCatagory = "programing";
+			var completetionDate = "8/23/2013";
+			var developers = 'Noah Huppert';
+			var post = '<!DOCTYPE HTML><html><body><div class="post"><div class="postTitle"><strong>' + postName + '</strong></div><div class="postContent"><div class="postMetaData"><br>Catagory: ' + postCatagory + '<br>Date Completed: ' + completetionDate + '<br>Developers: ' + developers + '<br>Download</div>' + postContent + '</div></div></body></html>';
+			var postHeader = '<div class="listing"><a onclick="$(".contentArea").load("posts/' + postCatagory + '/' + postName + '.html")"> <div class="listingThumbnail"id="' + postName + '"></div><div class="listingTitle">' + postName + '</div> </a></div>';
+			$('#headerCodeBox').hide();
+			$('#previewPost').hide();
+			$('#generatedCode').hide();
+			var postCreationContainerWidth = $(window).width() / 2;
+			$('#postCreationContainer').css({
+				'width' : postCreationContainerWidth,
+				'margin-left' : postCreationContainerWidth / 2
+			});
+			$('#postTitle').css({
+				'width' : postCreationContainerWidth - 200
+			});
+			$('#postContent').css({
+				'width' : postCreationContainerWidth - 200,
+				'height' : '300px'
+			});
+
+			$('#createPostButton').click(function() {
+				$('#postInput').hide('slow');
+				$('#previewPost').hide();
+				postName = $('#postTitle').val();
+				postTitle = $('#postTitle').val();
+				postName = postName.replace(/\s+/g, '');
+				postContent = $('#postContent').val();
+				postCatagory = $('#catagory').val();
+				completetionDate = $('#completetionDate').val();
+				developers = $('#developersInput').val();
+				post = '<!DOCTYPE HTML><html><body><div class="post"><div class="postTitle"><strong>' + postTitle + '</strong></div><div class="postContent"><div class="postMetaData"><br>Catagory: ' + postCatagory + '<br>Date Completed: ' + completetionDate + '<br>Developers: ' + developers + '<br>Download</div>' + postContent + '</div></div>';
+				//postHeader = '<div class="listing"><a onclick="$(' + "'.contentArea').load('posts/" + postCatagory + '/' + postName + ".html'" + ')"> <div class="listingThumbnail"id="' + postName + '"></div><div class="listingTitle">' + postTitle + '</div> </a></div>';
+				postHeader = "<div onclick=" + '"' + "$('.contentArea').load('posts/" + postCatagory + '/' + postName + "')" + '"' + 'class="listing"><div class="listingTitle">' + postTitle + '</div></div>';
+				$('#headerCode').val(postHeader);
+				$('#postFileCode').val(post);
+				$('#generatedCode').show('slide');
+				$('.postCatagory').html(postCatagory);
+				$('.postTitle').html(postName);
+			});
+
+			$('#indexFileCodeButton').click(function() {
+				$('.codeWraper').toggle('slide', 'slow');
+			});
+
+			$('#download').click(function() {
+				download(postName + '.html', post);
+			});
+
+			$('#editPostButton').click(function() {
+				$('#postInput').show('slide');
+				$('#generatedCode').hide('slide');
+			});
+			$('#previewPostButton').click(function(){
+				$('#previewPost').show('slide');
+				$('#postInput').hide('slow');
+				postName = $('#postTitle').val();
+				postContent = $('#postContent').val();
+				postCatagory = $('#catagory').val();
+				completetionDate = $('#completetionDate').val();
+				developers = $('#developersInput').val();
+				post = '<!DOCTYPE HTML><html><body><div class="post"><div class="postTitle"><strong>' + postName + '</strong></div><div class="postContent"><div class="postMetaData"><br>Catagory: ' + postCatagory + '<br>Date Completed: ' + completetionDate + '<br>Developers: ' + developers + '<br>Download</div>' + postContent + '</div></div>';
+				$('#previewPost').html(post + '<div style="background: #EBEBEB;color: #545454;text-align: center;border-style: solid;border-width: 2px;border-color: #6E6E6E;border-radius: 5px;width: 100px;height: 30px;line-height: 30px;font-size: 16px;margin: auto;margin-top: 10px;margin-bottom: 10px;"onclick="' + "$('#postInput').show('slide');$('#previewPost').hide('slide');" + '"><strong>Edit Post</strong></div>');
+			});
+			
+			
+			function download(filename, text) {
+				var pom = document.createElement('a');
+				pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+				pom.setAttribute('download', filename);
+				pom.click();
+			}
+		</script>
+	</body>
+</html>

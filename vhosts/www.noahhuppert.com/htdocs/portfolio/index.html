@@ -1,0 +1,524 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+			}
+			a {
+				color: #FFFFFF;
+				text-decoration: none;
+			}
+			.sideMenu {
+				background: #212121;
+				float: left;
+				width: 20%;
+				height: 100%;
+				color: #F2F2F2;
+				text-align: center;
+			}
+			.sideMenuTitle {
+				font-size: 32px;
+				margin-top: 50%;
+				font-style: italic;
+				padding-bottom: 15%;
+			}
+
+			.sideMenuOption {
+				margin: auto;
+				font-size: 20px;
+				width: 110px;
+				z-index: 1;
+			}
+			.sideMenuSelector {
+				text-align: left;
+				margin: auto;
+				width: 110px;
+				margin-top: -21px;
+				border-radius: 2px;
+			}
+			.sideMenuSelector#programing {
+				background: #FF0000;
+			}
+			.sideMenuSelector#animation {
+				background: #0033FF;
+			}
+			.sideMenuSelector#robotics {
+				background: #0094CF;
+			}
+			.sideMenuSelector#other {
+				background: #00BA76;
+			}
+			.sideMenuOption {
+				margin: auto;
+				font-size: 20px;
+				width: 110px;
+				z-index: 1;
+				margin-top: 20px;
+			}
+			.tagLine {
+				font-style: italic;
+				font-size: 16px;
+				margin-left: 20px;
+			}
+			.contentArea {
+				width: 100%;
+				background: url();
+				color: #363636;
+				text-align: center;
+			}
+			.projectsListing {
+				z-index: 2;
+				width: 1280px;
+				height: 775px;
+			}
+			.catagory {
+				padding-top: 20px;
+				font-size: 40px;
+				font-style: italic;
+				padding-bottom: 40px;
+				width: 220px;
+			}
+			.projectListingBox {
+				width: 986px;
+				height: 620px;
+				margin-left: 150px;
+				background: #FAFAFA;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #E3E3E3;
+				border-radius: 10px;
+				box-shadow: 3px 3px 4px #EBEBEB;
+			}
+			.listing {
+				width: 100px;
+				height: 100px;
+				border-style: dashed;
+				border-width: 2px;
+				border-color: #000000;
+				border-radius: 15px;
+				background: #FFFFFF;
+				margin-top: 20px;
+				margin-left: 32px;
+				float: left;
+			}
+			.listingTitle {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				background: #FFFFFF;
+				width: 75px;
+				border-style: none;<!
+				--border-radius: 5px;
+				border-width: 1px;
+				border-color: #242424;-->
+				z-index: 2;
+				font-size: 16px;
+				font-style: italic;
+			}
+			.post {
+				width: 60%;
+				margin: auto;
+				padding-top: 100px;
+			}
+			.postTitle {
+				font-size: 34px;
+				font-style: italic;
+				padding-bottom: 20px;
+			}
+			.postContent {
+				background: #FAFAFA;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #F2F2F2;
+				border-radius: 3px;
+				text-align: left;
+				padding-left: 25px;
+				padding-right: 25px;
+				padding-top: 25px;
+				padding-bottom: 25px;
+				color: #808080;
+			}
+			.postMetaData {
+				background: #FCFCFC;
+				width: 170px;
+				box-shadow: 0px 0px 5px #E3E3E3 inset;
+				border-radius: 2px;
+				font-size: 14px;
+				color: #CCCCCC;
+				text-align: center;
+				float: left;
+				margin-right: 25px;
+			}
+			.navBar {
+				z-index: 2;
+				position: absolute;
+				text-align: center;padding-left; 500px;
+				width: 100px;
+				height: 70%;
+				border-right-style: solid;
+				border-right-width: 2px;
+				border-right-color: #D1D1D1;
+				margin-top: 120px;
+				margin-left: 45px;
+			}
+			.navBarItem {
+				height: 40px;
+				line-height: 40px;
+				width: 90px;
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #E3E3E3;
+				font-size: 18px;
+				padding-bottom: 5px;
+				padding-top: 5px;
+				color: #9E9E9E;
+			}
+			.navBarHeader {
+				height: 60px;
+				line-height: 60px;
+				width: 90px;
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #E3E3E3;
+				font-size: 24px;
+				color: #666666;
+				font-style: italic;
+			}
+			.homeImage {
+				margin: auto;
+				margin-top: 10%;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #8F8F8F;
+				border-radius: 10px;
+			}
+			.imageCarosel {
+				padding-left: 20%;
+				background: #1C1C1C;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sideMenu">
+			<div class="sideMenuTitle">
+				<strong> Noah Huppert </strong>
+				<div class="tagLine">
+					~A student, developer, and 3D artist.
+				</div>
+			</div>
+			<div class="sideMenuOption" id="programing">
+				Programing
+			</div>
+			<div class="sideMenuSelector" id="programing">
+				&nbsp;
+			</div>
+			<div class="sideMenuOption" id="animation">
+				Animation
+			</div>
+			<div class="sideMenuSelector" id="animation">
+				&nbsp;
+			</div>
+			<div class="sideMenuOption" id="robotics">
+				Robotics
+			</div>
+			<div class="sideMenuSelector" id="robotics">
+				&nbsp;
+			</div>
+			<div href="PostCreator.php" class="sideMenuOption" id="other">
+				Other
+			</div>
+			<div class="sideMenuSelector" id="other">
+				&nbsp;
+			</div>
+		</div>
+		<div class="navBar">
+			<div class="navBarHeader" id="home">
+				<strong>Home</strong>
+			</div>
+			<div class="navBarItem" id="programing">
+				Programing
+			</div>
+			<div class="navBarItem" id="animation">
+				Animation
+			</div>
+			<div class="navBarItem" id="robotics">
+				Robotics
+			</div>
+			<div class="navBarItem" id="other">
+				Other
+			</div>
+		</div>
+
+		<div class="contentArea">
+			<div class="imageCarosel">
+				<img id="homeImage1" class="homeImage" src="images/homeImage1.jpg"/>
+				<img id="homeImage2" class="homeImage" src="images/homeImage2.jpg"/>
+			</div>
+
+			<!--<div class="post">
+			<div class="postTitle">
+			<strong>Project Title</strong>
+			</div>
+			<div class="postContent">
+			<div class="postMetaData">
+			Catagory: catagory
+			<br>
+			Date Completed: M/D/Y
+			<br>
+			Developers: developers
+			<br>
+			Download
+			</div>
+			Some things about the article and such should be writen here. Some things about the article and such should be writen here.
+			Some things about the article and such should be writen here. Some things about the article and such should be writen here.
+			Some things about the article and such should be writen here. Some things about the article and such should be writen here.
+			Some things about the article and such should be writen here. Some things about the article and such should be writen here.
+			Some things about the article and such should be writen here.Some things about the article and such should be writen here.
+			</div>
+			</div>-->
+			<!--<div class="projectsListing">
+			<div class="catagory">
+			Programing
+			</div>
+			<div class="projectListingBox">
+
+			</div>
+			</div>-->
+		</div>
+		<script>
+			$(document).ready(function() {
+
+				//Initail Hiding and other functions\\
+				$(".sideMenuSelector#programing").hide();
+				$(".sideMenuSelector#animation").hide();
+				$(".sideMenuSelector#robotics").hide();
+				$(".sideMenuSelector#other").hide();
+				$('.navBar').css({
+					'margin-left' : '190px'
+				});
+				$('.navBar').toggle();
+				$('.homeImage#homeImage2').hide();
+				window.setInterval(function() {
+					$('.homeImage#homeImage1').toggle();
+					$('.homeImage#homeImage2').toggle();
+				}, 5000);
+
+				//******************************\\
+
+				//Home Option in secondary side menu\\
+				$('.navBarHeader#home').click(function() {
+					$('.contentArea').html('<div class="imageCarosel"><img id="homeImage1" class="homeImage" src="images/homeImage1.jpg"/><img id="homeImage2" class="homeImage" src="images/homeImage2.jpg"/></div>');
+					$(".navBar").hide('slow');
+					$('.homeImage#homeImage2').hide();
+					
+					$(".sideMenu").animate({
+						width : '20%',
+						opacity : 1
+					}, 1200);
+					$(".imageCarosel").css({
+						'padding-left' : '0%'
+					});
+				});
+				//******************************\\
+
+				//Programing Option in secondary side menu\\
+				$('.navBarItem#programing').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Programing</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/programing.html');
+					positionProjectListingBox();
+					positionSecondMenu();
+				});
+				//******************************\\
+
+				//Animation Option in secondary side menu\\
+				$('.navBarItem#animation').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Animation</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/animation.html');
+					positionProjectListingBox();
+					positionSecondMenu();
+				});
+				//******************************\\
+
+				//Robotics Option in secondary side menu\\
+				$('.navBarItem#robotics').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Robotics</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/robotics.html');
+					positionProjectListingBox();
+					positionSecondMenu();
+				});
+				//******************************\\
+
+				//Other Option in secondary side menu\\
+				$('.navBarItem#other').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Other</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/other.html');
+					positionProjectListingBox();
+					positionSecondMenu();
+				});
+				//******************************\\
+
+				//Side Menu\\
+				var sideMenuWidth = $(window).width() * 0.2;
+				if (sideMenuWidth < 300) {
+					sideMenuWidth = 300;
+				}
+				$('.sideMenu').css({
+					'height' : $(window).height(),
+					'width' : sideMenuWidth
+				});
+				//******************************\\
+
+				//Image Carosel\\
+				var imageCaroselWidth = $(window).width() - sideMenuWidth;
+				var imageCaroselMarginTop = ($(window).height() - 540) / 2;
+				if (imageCaroselWidth < 1000) {
+					imageCaroselWidth = 1000;
+				}
+				$('.imageCarosel').css({
+					'width' : imageCaroselWidth,
+					'height' : $(window).height()
+				});
+				$('.homeImage').css({
+					'margin-top' : imageCaroselMarginTop
+				});
+				//******************************\\
+
+				//Content Area\\
+				$('.contentArea').css({
+					'height' : $(window).height(),
+					'width' : $(window).width()
+				});
+				$('body').css({
+					'height' : $(window).height(),
+					'width' : $(window).width()
+				});
+				//******************************\\
+
+				//Project Listing Box\\
+				function positionProjectListingBox() {
+					var projectListingBoxMarginLeft = ($('.contentArea').width() - 986) / 2;
+					if (projectListingBoxMarginLeft < 100) {
+						projectListingBoxMarginLeft = projectListingBoxMarginLeft + Math.abs(projectListingBoxMarginLeft - 120);
+					}
+					$('.catagory').css({
+						'margin-left' : ($('.contentArea').width() - 220) / 2
+					});
+					$('.projectListingBox').css({
+						'margin-left' : projectListingBoxMarginLeft
+					});
+				}
+
+				//******************************\\
+
+				//Secondary Menu\\
+				function positionSecondMenu() {
+					var projectListingBoxMarginLeft = ($('body').width() - 986) / 2;
+					if (projectListingBoxMarginLeft < 100) {
+						projectListingBoxMarginLeft = projectListingBoxMarginLeft + Math.abs(projectListingBoxMarginLeft - 120);
+					}
+					var secondMenuMarginLeft = (projectListingBoxMarginLeft - 110);
+					$('.navBar').css({
+						'margin-left' : secondMenuMarginLeft
+					});
+				}
+
+				//******************************\\
+
+				//Programing Option in side menu\\
+				$('.sideMenuOption#programing').mouseenter(function() {
+					$(".sideMenuSelector#programing").show();
+				});
+
+				$('.sideMenuOption#programing').mouseleave(function() {
+					$(".sideMenuSelector#programing").hide();
+				});
+
+				$('.sideMenuOption#programing').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory"s>Programing</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/programing.html');
+
+					positionProjectListingBox();
+					positionSecondMenu();
+
+					$(".navBar").show('slow');
+					$(".sideMenu").animate({
+						width : 0,
+						opacity : 0
+					}, 1200);
+				});
+				//******************************\\
+
+				//Animation Option in side menu\\
+				$('.sideMenuOption#animation').mouseenter(function() {
+					$(".sideMenuSelector#animation").show();
+				});
+
+				$('.sideMenuOption#animation').mouseleave(function() {
+					$(".sideMenuSelector#animation").hide();
+				});
+
+				$('.sideMenuOption#animation').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Animation</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/animation.html');
+					
+					positionProjectListingBox();
+					positionSecondMenu();
+					
+					$(".navBar").show('slow');
+					$(".sideMenu").animate({
+						width : 0,
+						opacity : 0
+					}, 1200);
+				});
+				//******************************\\
+
+				//Robotics Option in side menu\\
+				$('.sideMenuOption#robotics').mouseenter(function() {
+					$(".sideMenuSelector#robotics").show();
+				});
+
+				$('.sideMenuOption#robotics').mouseleave(function() {
+					$(".sideMenuSelector#robotics").hide();
+				});
+
+				$('.sideMenuOption#robotics').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Robotics</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/robotics.html');
+					
+					positionProjectListingBox();
+					positionSecondMenu();
+					
+					$(".navBar").show('slow');
+					$(".sideMenu").animate({
+						width : 0,
+						opacity : 0
+					}, 1200);
+				});
+
+				//Other Option in side menu\\
+				$('.sideMenuOption#other').mouseenter(function() {
+					$(".sideMenuSelector#other").show();
+				});
+
+				$('.sideMenuOption#other').mouseleave(function() {
+					$(".sideMenuSelector#other").hide();
+				});
+
+				$('.sideMenuOption#other').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Other</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/other.html');
+					$(".navBar").show('slow');
+					$(".sideMenu").animate({
+						width : 0,
+						opacity : 0
+					}, 1200);
+				});
+				//******************************\\
+			});
+		</script>
+	</body>
+</html>

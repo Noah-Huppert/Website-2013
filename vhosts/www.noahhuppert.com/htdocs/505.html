@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<title>505</title>
+		<style>
+			#oopsContainer {
+				width: 450px;
+				height: 500px;
+				margin: auto;
+				background: #FCFCFC;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #EBEBEB;
+				text-align: center;
+				border-radius: 10px;
+			}
+			#oopsText{
+				margin-top: 50px;
+			}
+			#oopsTitle {
+				margin-top: 10px;
+				font-size: 40px;
+				font-style: italic;
+				color: #737373;
+			}
+			#oopsReason {
+				width: 75%;
+				margin: auto;
+				margin-top: 20px;
+				font-size: 24px;
+				font-style: italic;
+				color: #737373;
+			}
+			#oopsSolutionsList {
+				width: 80%;
+				color: #737373;
+				text-align: center;
+				font-size: 20px;
+				font-style: italic;
+				margin: auto;
+			}
+			#oopsSolutionsListTitle {
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oopsContainer">
+			<div id="oopsText">
+				<div id="oopsTitle">
+					<strong>Oops</strong>
+				</div>
+				<div id="oopsReason">
+					It looks like one of our scripts crashed. This could be a random error in which case you should try again, or
+					there is something wrong with the page. Please contact noah.programmer AT GMAIL DOT COM
+				</div>
+				<div id="oopsSolutionsList">
+					<div id="oopsSolutionsListTitle">
+						Here are some things you can do to fix this:
+					</div>
+					<div id="oopsSolutionsList">
+						~Try <a style="color: #C9C9C9;" onclick="location.reload()">reloading</a> the page.
+						<br>
+						~Check the spelling of the link.
+						<br>
+						~Contact the website admin(Noah Huppert).
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('#oopsContainer').css({
+				'margin-top' : ($(window).height() - 500) / 2
+			});
+		</script>
+	</body>
+</html>

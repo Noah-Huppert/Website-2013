@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+		<style>
+			a {
+				color: #636363;
+				text-decoration: none;
+			}
+			#topBar {
+				height: 150px;
+				background: #FFFFFF;
+			}
+			#topBarPicture {
+				height: 100px;
+				background: #FFFFFF;
+			}
+			#teamLogo {
+				height: 50px;
+				margin-top: 30px;
+				line-height: 50px;
+				font-size: 30px;
+				float: left;
+			}
+			#firstLogo {
+				width: 100px;
+				height: 100px;
+				float: left;
+			}
+			#headerPicture {
+				margin-top: 50px;
+				text-align: center;
+				font-size: 30px;
+				float: left;
+			}
+			#topBarMenu {
+				width: 550px;
+				height: 50px;
+				margin: auto;
+				background: #FCFCFC;
+			}
+			.topBarOption:hover {
+				font-size: 24px;
+			}
+			.topBarOption {
+				height: 50px;
+				line-height: 50px;
+				margin-left: 30px;
+				font-family: Yanone Kaffeesatz;
+				font-size: 20px;
+				text-align: center;
+				float: left;
+			}
+			.bottomBar {
+				width: 100%;
+				color: #E6E6E6;
+				font-family: Yanone Kaffeesatz;
+				background: #1A1A1A;
+			}
+			#bottomBarGradiant {
+				background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#1A1A1A));
+			}
+			#bottomBarContent {
+				background: #1A1A1A;
+			}
+			#usageDiscalimer {
+				padding-top: 10px;
+				text-align: center;
+				background: #1A1A1A;
+			}
+			.bottomBarItem {
+				height: 30px;
+				line-height: 30px;
+				padding-top: 10px;
+				background: #1A1A1A;
+				font-style: italic;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			#bottomBarItemsWraper {
+				width: 300px;
+				margin: auto;
+				background: #1A1A1A;
+				height: 1%;
+				overflow: hidden;
+				text-align: center;
+			}
+			#aboutMe {
+				width: 50%;
+				margin: auto;
+				margin-top: 80px;
+			}
+			#aboutMeTitle {
+				font-family: Yanone Kaffeesatz;
+				font-size: 24px;
+				text-align: center;
+				margin-top: 10px;
+			}
+			#aboutMeContent {
+				font-family: Karla;
+			}
+		</style>
+	</head>
+	<body onload="init();" style="margin: 0;">
+		<div id='topBar'>
+			<div id="topBarPicture">
+				<div id='teamLogo'>
+					Team Logo
+				</div>
+				<img id='firstLogo' src="first-robotics-logo.jpg" />
+				<div id="headerPicture">
+					<-- ik this isnt the logo ||| Picture of team doing something impressive looking
+				</div>
+			</div>
+			<div id="topBarBackground" style="background: #FCFCFC;">
+				<div id="topBarMenu">
+					<div class="topBarOption">
+						<a href="index.html">Home</a>
+					</div>
+					<div class="topBarOption">
+						<a href="About Us.html">About us</a>
+					</div>
+					<div class="topBarOption">
+						<a href="Challenge.html">The Challenge</a>
+					</div>
+					<div class="topBarOption">
+						<a href="Events.html">Events</a>
+					</div>
+					<div class="topBarOption">
+						<a href="http://www.lsrhs.net">LSRHS</a>
+					</div>
+					<div class="topBarOption">
+						<a href="Team Portal.html">Team Portal</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="aboutMe" style="text-align: center;">
+			<div id="aboutMeTitle">
+				<strong>Upcoming Events</strong>
+			</div>
+			<div id="aboutMeContent">
+				<br>
+				<i>Two options here. We could either have a calender wigit and some dates or the stuff below</i>
+				<br>
+				<br>
+				&lt;Event name&gt; &lt;Event Date&gt; : <br>
+				<i>More info and stuff blaaaaa bllaaa</i><br>
+				
+				&lt;Event name&gt; &lt;Event Date&gt; : <br>
+				<i>More info and stuff blaaaaa bllaaa</i><br>
+				
+				&lt;Event name&gt; &lt;Event Date&gt; : <br>
+				<i>More info and stuff blaaaaa bllaaa</i><br>
+				
+				&lt;Event name&gt; &lt;Event Date&gt; : <br>
+				<i>More info and stuff blaaaaa bllaaa</i><br>
+				<br>
+				<i>
+					Ect...
+				</i>
+				
+			</div>
+		</div>
+
+		<div class="bottomBar">
+			<div id="bottomBarGradiant">
+				&nbsp;
+			</div>
+			<div id="bottomBarContent">
+				<div id="usageDiscalimer">
+					&copy;Noah Huppert. All code on the LSRHS Robotics site is coded by Noah Huppert. Do not distribute or claim as your own.
+				</div>
+				<div id='bottomBarItemsWraper'>
+					<span style='float: left;' class='bottomBarItem'> <a style='color: #E6E6E6; text-decoration: none;' href="contactMe.php">Contact Us</a> </span>
+				</div>
+
+			</div>
+		</div>
+		<script>
+			function init() {
+				//Setting minum viewing width
+				if ($(window).width() < 950) {
+					$('body').css({
+						'width' : '950px'
+					});
+				}
+				if ($(window).width() > 950) {
+					$('body').css({
+						'width' : $(window).width(),
+						'overflow-x' : 'hidden'
+					});
+				}
+
+				//Top Bar
+				$('#topBarBackground').css({
+					'width' : $(window).width()
+				});
+
+				//Bottom Bar
+				var bottomBarMarginTop;
+				if (($('body').height() + 75) < $(window).height()) {
+					bottomBarMarginTop = ($(window).height() - $('body').height()) + $('.bottomBar').height();
+				}
+				if (($('body').height() + 75) > $(window).height()) {
+					bottomBarMarginTop = 80;
+				}
+				$('.bottomBar').css({
+					'margin-top' : bottomBarMarginTop
+				});
+			}
+		</script>
+	</body>
+</html>

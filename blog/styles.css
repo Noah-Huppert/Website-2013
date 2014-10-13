@@ -1,0 +1,396 @@
+body {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px
+}
+
+#home {
+	background: url(home.jpg) 50% 0 repeat fixed;
+	min-height: 923px;
+	height: 1000px;
+	width: 100%;
+	min-width: 1334px;
+	position: relative;
+}
+
+#home article {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	position: absolute;
+	font-family: kavoon;
+	font-size: 62px;
+	color: #363636;
+	padding-top: 25%;
+}
+
+#projectSelect {
+	background: url(projectSelect.jpg) 50% 0 repeat fixed;
+	min-height: 1080px;
+	height: 100%;
+	width: 100%;
+	min-width: 1334px;
+	position: relative;
+}
+
+#projectSelect article {
+	background: #FAFAFA;
+	font-size: 20px;
+	width: 75%;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#subBody {
+	font-family: kavoon;
+	font-size: 24px;
+	color: #363636;
+	padding-top: 10%;
+	padding-left: 18.75%;
+}
+
+#subBodyNoPadding {
+	font-family: kavoon;
+	font-size: 24px;
+	color: #363636;
+	padding-top: 3%;
+	padding-left: 18.75%;
+}
+
+#project {
+	background: url(project.jpg) 50% 0 repeat fixed;
+	min-height: 1600px;
+	height: 100%;
+	width: 100%;
+	min-width: 1334px;
+	position: relative;
+}
+
+#project article {
+	background: #FAFAFA;
+	font-size: 20px;
+	width: 75%;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#projectContent {
+	width: 50%;
+	text-align: center;
+	padding-left: 26.25%;
+}
+
+#fixed {
+	position: fixed;
+	z-index: 2;
+	padding-top: 18.75%;
+}
+
+#fixedPrograming {
+	position: absolute;
+	padding-left: 145px;
+	z-index: 3;
+	display: none;
+}
+
+#fixedAnimation {
+	position: absolute;
+	padding-left: 145px;
+	z-index: 4;
+	display: none;
+}
+
+#fixedRobotics {
+	position: absolute;
+	padding-left: 145px;
+	z-index: 5;
+	display: none;
+}
+
+#fixedOther {
+	position: absolute;
+	padding-left: 145px;
+	z-index: 6;
+	display: none;
+}
+
+#navBar {
+	width: 135px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 17px;
+	background-color: #000000;
+	color: #fff;
+}
+
+#navBar:hover {
+	background-color: #3B2E32;
+}
+
+#navBarCatagory {
+	width: 135px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 17px;
+	background-color: #000000;
+	color: #fff;
+}
+
+#navBarCatagoryPrograming {
+	width: 135px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 17px;
+	background-color: #000000;
+	color: #fff;
+}
+
+#navBarCatagoryAnimation {
+	width: 135px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 17px;
+	background-color: #000000;
+	color: #fff;
+}
+
+#navBarCatagoryRobotics {
+	width: 135px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 17px;
+	background-color: #000000;
+	color: #fff;
+}
+
+#navBarCatagoryOther {
+	width: 135px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 17px;
+	background-color: #000000;
+	color: #fff;
+}
+
+#navBarCatagory:hover {
+	background-color: #3B2E32;
+}
+
+#navArrow {
+	padding-right: 5px;
+	float: right;
+	color: #FFFFFF;
+	padding-top: 5px;
+}
+
+#navSideBar {
+	background-color: #FF0000;
+	float: right;
+	width: 20px;
+	height: 25px;
+	padding-top: 5px;
+}
+
+/*#fixedPostButton {
+ position: fixed;
+ z-index: 2;
+ margin-top: 5px;
+ }
+
+ #fixedPostButton article {
+ background: #FF0000;
+ color: #FFFFFF;
+ width: 27px;
+ height: 25px;
+ text-align: center;
+ font-size: 20px;
+ font-family: Kavoon;
+ padding-bottom: 2px;
+ border-radius: 5px;
+ position: fixed;
+ z-index: 2;
+ }
+
+ #fixedLoginButton {
+ position: fixed;
+ z-index: 2;
+ margin-top: 5px;
+ }
+
+ #fixedLoginButton article {
+ background: #FF0000;
+ color: #FFFFFF;
+ width: 60px;
+ height: 23px;
+ text-align: center;
+ font-size: 14px;
+ font-family: Kavoon;
+ padding-top: 3px;
+ border-radius: 5px;
+ position: fixed;
+ z-index: 2;
+ }*/
+/*#loginPopup {
+ background: #FFFFFF;
+ width: 550px;
+ margin-left: 25%;
+ margin-top: 25%;
+ position: fixed;
+ text-align: center;
+ border-radius: 8px;
+ z-index: 8;
+ }
+
+ #loginPopupContent {
+ color: #000000;
+ text-align: center;
+ font-size: 20px;
+ font-family: Kavoon;
+ position: fixed;
+ }*/
+#postCreationPopup {
+	background: #FFFFFF;
+	width: 550px;
+	margin-left: 25%;
+	margin-top: 25%;
+	text-align: center;
+	position: fixed;
+	border-radius: 10px;
+	z-index: 1;
+	opacity: 0;
+}
+
+#postCreationPopupContent {
+	font-size: 20px;
+	font-family: Kavoon;
+	margin-top: 10%;
+}
+
+#postCreationPopupContentPadding {
+	margin-top: 5%;
+}
+
+#postCreationPopupContentPaddingSmall {
+	margin-top: 5%;
+}
+
+input {
+	font-size: 14px;
+}
+
+#radioButton {
+	font-size: 16px;
+}
+/*New Stuff*/
+#managePopupButton {
+	background: #FF0000;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-align: center;
+	width: 70px;
+	height: 23.5px;
+	padding-top: 1.5px;
+	border-radius: 5px;
+	margin-left: 89%;
+	position: fixed;
+	z-index: 1;
+}
+
+#managePopup {
+	text-align: center;
+	background: #FFFFFF;
+	width: 600px;
+	height: 650px;
+	border-radius: 10px;
+	position: fixed;
+	font-size: 20px;
+	opacity: 0;
+}
+#logoutButton {
+	background: #FF0000;
+	color: #FFFFFF;
+	font-size: 16px;
+	height: 23.5px;
+	margin-left: 540px;
+	margin-right: 5px;
+	margin-top: 5px;
+	padding-top: 1.5px;
+	border-radius: 5px;
+}
+#settingsTab {
+	font-size: 16px;
+	background: #FFFFFF;
+	color: #757575;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #888888;
+	border-bottom-color: #FFFFFF;
+	border-radius: 5px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	width: 40px;
+	margin-left: 5px;
+	float: left;
+}
+#settings {
+	box-shadow: 0px 0px 5px #5E5E5E;
+	border-radius: 3px;
+	border-width: 2px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 560px;
+	height: 400px;
+}
+table {
+	padding-top: 5px;
+	position: absolute;
+}
+
+th {
+	text-align: left;
+	font-size: 18px;
+	padding-left: 25px;
+	padding-bottom: 10px;
+}
+td {
+	font-size: 16px;
+	padding-bottom: 5px;
+	text-align: left;
+	padding-left: 25px;
+}
+td.postEditButton {
+	font-size: 12px;
+	color: #B8CCD1;
+	padding-top: 3px;
+}
+td.postEditButton:hover {
+	color: #5C7980;
+}
+input.postEditButton{
+	border-style: none;
+	background: #FFFFFF;
+	font-size: 11px;
+	color: #B8CCD1;
+}
+input.postEditButton:hover {
+	color: #5C7980;
+}
+
+textarea.postedit{
+	resize: none;
+}
+
+#userStats{
+	text-align: center;
+	padding-bottom: 50px;
+}
+#userStatsContent{
+	font-size: 14px;
+}

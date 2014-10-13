@@ -1,0 +1,74 @@
+#turnTable {
+	width: 100%;
+	height: 350px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #F0F0F0;
+}
+.turnTableControllArrow {
+	width: 60px;
+	height: 120px;
+	z-index: 2;
+	position: absolute;
+	background: none;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 120px;
+	font-size: 40px;
+	font-family: Karla;
+	color: #E8E8E8;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.turnTableControllArrow:hover {
+	background: #FCFCFC;
+}
+.turnTableElement {
+	width: 40%;
+	height: 80%;
+	margin-top: 2.5%;
+	position: absolute;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #8F8F8F;
+	text-decoration: none;
+}
+.turnTableElementTitle {
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 24px;
+	font-family: Pompiere;
+	background: #FAFAFA;
+	opacity: 0.5;
+	color: #000000;
+}
+.turnTableElementContent {
+	width: 100%;
+	height: 50%;
+	margin: auto;
+	margin-left: 20px;
+	font-size: 18px;
+	font-family: Karla;
+	color: #919191;
+	text-align: left;
+	font-style: italic;
+}
+.turnTableElementTag {
+	width: 100%;
+	padding-top: 10px;
+	padding-left: 10px;
+	color: #919191;
+	font-family: Karla;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #F7F7F7;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}

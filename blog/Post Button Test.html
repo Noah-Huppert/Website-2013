@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+		<script src="jquery-1.9.1.min.js"></script>
+		<style>
+			#fixedPostButton {
+				position: fixed;
+				z-index: 2;
+			}
+
+			#fixedPostButton article {
+				position: absolute;
+				background: #FF0000;
+				color: #FFFFFF;
+				width: 27px;
+				height: 25px;
+				text-align: center;
+				font-size: 20px;
+				font-family: Kavoon;
+				padding-bottom: 2px;
+				border-radius: 5px;
+				position: fixed;
+				z-index: 2;
+			}
+
+			#postCreationPopup {
+				background: #FFFFFF;
+				width: 550px;
+				margin-left: 25%;
+				margin-top: 25%;
+				text-align: center;
+				position: fixed;
+				border-radius: 10px;
+				z-index: 7;
+				opacity: 0;
+			}
+
+			#postCreationPopupContent {
+				font-size: 20px;
+				font-family: Kavoon;
+				margin-top: 10%;
+			}
+
+			#postCreationPopupContentPadding {
+				margin-top: 5%;
+			}
+
+			#postCreationPopupContentPaddingSmall {
+				margin-top: 5%;
+			}
+
+			input {
+				font-size: 14px;
+			}
+
+			#radioButton {
+				font-size: 16px;
+			}
+
+		</style>
+	</head>
+	<body style="height: 10000px; background: #363636;">
+		<div id="fixedPostButton">
+			<article>
+				+
+			</article>
+		</div>
+
+		<div id="postCreationPopup">
+			<div id="postCreationPopupContent">
+				<form>
+					Post Title:
+					<input name="postTitle" type="text" placeholder="Your Amazing Title"/>
+					<div id="postCreationPopupContentPadding">
+						&nbsp;
+					</div>
+					<textarea name="postContent" placeholder="Article About Your Amazing Project"></textarea>
+					<div id="postCreationPopupContentPaddingSmall">
+						&nbsp;
+					</div>
+					Tag
+					<br>
+					&nbsp;
+					<div id="radioButton">
+						<input checked="checked" name="tag" type="radio" value="Programing"/>
+						Programing
+						<input name="tag" type="radio" value="Animation"/>
+						Animation
+						<input name="tag" type="radio" value="Robotics"/>
+						Robotics
+						<input name="tag" type="radio" value="Other"/>
+						Other
+					</div>
+					<br>
+					<input name="Submit" type="submit" value="Submit" />
+				</form>
+			</div>
+		</div>
+		<script>
+			var popupHeight = $(window).height() - ($(window).height() / 4) + ($(window).height() / 7);
+			var popupWidth = $(window).width() - ($(window).width() / 4);
+			var popupMarginLeft = ($(window).width() / 2) - (popupWidth / 2);
+			var popupMarginTop = ($(window).height() / 2) - (popupHeight / 2);
+
+			$('#fixedPostButton').click(function() {
+				$('#postCreationPopup').toggle(function() {
+					$('#postCreationPopup').css({
+						'opacity' : '0'
+					});
+				}, function() {
+					$('#postCreationPopup').css({
+						'opacity' : '1'
+					});
+				});
+			});
+			
+			
+
+			$('#radioButton').css({
+				'width' : popupWidth - (popupWidth / 4),
+				'margin-left' : popupWidth - (popupWidth) + (popupWidth / 10)
+			});
+
+			$('textarea').css({
+				'width' : popupWidth - (popupWidth / 4),
+				'height' : popupHeight - (popupHeight / 2)
+			});
+
+			$('#fixedPostButton').css({
+				'opacity' : '0.5'
+			});
+
+			$('#postCreationPopup').css({
+				'height' : popupHeight,
+				'width' : popupWidth,
+				'margin-left' : popupMarginLeft,
+				'margin-top' : popupMarginTop
+			});
+
+			$('#postCreationPopupContent').css({
+				'margin-top' : popupHeight / 10
+			})
+
+			$('#postCreationPopupContentPadding').css({
+				'margin-top' : popupHeight / 20
+			})
+
+			$('#postCreationPopupContentPaddingSmall').css({
+				'margin-top' : popupHeight / 80
+			})
+
+			var padding = $(window).width() - 40;
+			$('#fixedPostButton').css({
+				'padding-left' : padding
+			});
+
+			$('#fixedPostButton').mouseleave(function() {
+
+				$('#fixedPostButton').css({
+					'opacity' : '0.5'
+				});
+			});
+
+			$('#fixedPostButton').mouseenter(function() {
+
+				$('#fixedPostButton').css({
+					'opacity' : '1'
+				});
+			});
+		</script>
+
+	</body>
+</html>

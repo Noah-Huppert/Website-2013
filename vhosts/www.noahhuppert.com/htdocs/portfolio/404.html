@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+			}
+			.sideMenu {
+				background: #212121;
+				float: left;
+				width: 20%;
+				height: 100%;
+				color: #F2F2F2;
+				text-align: center;
+			}
+			.sideMenuTitle {
+				font-size: 32px;
+				margin-top: 50%;
+				font-style: italic;
+				padding-bottom: 15%;
+			}
+
+			.sideMenuOption {
+				margin: auto;
+				font-size: 20px;
+				width: 110px;
+				z-index: 1;
+			}
+			.sideMenuSelector {
+				text-align: left;
+				margin: auto;
+				width: 110px;
+				margin-top: -21px;
+				border-radius: 2px;
+			}
+			.sideMenuSelector#programing {
+				background: #FF0000;
+			}
+			.sideMenuSelector#animation {
+				background: #0033FF;
+			}
+			.sideMenuSelector#robotics {
+				background: #0094CF;
+			}
+			.sideMenuSelector#other {
+				background: #00BA76;
+			}
+			.sideMenuOption {
+				margin: auto;
+				font-size: 20px;
+				width: 110px;
+				z-index: 1;
+				margin-top: 20px;
+			}
+
+			.contentArea {
+				margin-left: 20%;
+				width: 80%;
+				background: #363636;
+				color: #FFFFFF;
+				text-align: center;
+			}
+			#oops {
+				font-size: 44px;
+				padding-top: 10%;
+			}
+			#oopsReason {
+				font-size: 24px;
+				width: 50%;
+				padding-left: 25%;
+				padding-top: 20px;
+			}
+			#oopsSolutions {
+				font-size: 18px;
+				padding-top: 30px;
+			}
+			#oopsSolutionsList {
+				text-align: left;
+				margin-left: 40%;
+				width: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sideMenu">
+			<div class="sideMenuTitle">
+				<strong> Noah Huppert </strong>
+			</div>
+			<div class="sideMenuOption" id="programing">
+				Programing
+			</div>
+			<div class="sideMenuSelector" id="programing">
+				&nbsp;
+			</div>
+			<div class="sideMenuOption" id="animation">
+				Animation
+			</div>
+			<div class="sideMenuSelector" id="animation">
+				&nbsp;
+			</div>
+			<div class="sideMenuOption" id="robotics">
+				Robotics
+			</div>
+			<div class="sideMenuSelector" id="robotics">
+				&nbsp;
+			</div>
+			<div class="sideMenuOption" id="other">
+				Other
+			</div>
+			<div class="sideMenuSelector" id="other">
+				&nbsp;
+			</div>
+		</div>
+		<div class="contentArea">
+			<div id="oops">
+				<strong><i>Nothing to see here, move along</i></strong>
+			</div>
+			<div id="oopsReason">
+				<i>It looks like the page you are trying to acces does not exist, this may be because it does not exist or something went wrong wth your browser or the server.</i>
+			</div>
+			<div id="oopsSolutions">
+				<i>Here are some things you can do to fix this:</i>
+				<div id="oopsSolutionsList">
+					~Try <a style="color: #C9C9C9;" onclick="location.reload()">reloading</a> the page.
+					<br>
+					~Check the spelling of the link.
+					<br>
+					~Contact the website admin(Noah Huppert).
+					<br>
+					~You might not be able to do anything, the page just might not exist.
+				</div>
+			</div>
+		</div>
+		<script>
+			//Initail Hiding and other functions\\
+			$(".sideMenuSelector#programing").hide();
+			$(".sideMenuSelector#animation").hide();
+			$(".sideMenuSelector#robotics").hide();
+			$(".sideMenuSelector#other").hide();
+			//******************************\\
+
+			//Side Menu\\
+			$('.sideMenu').css({
+				'height' : $(window).height()
+			});
+			//******************************\\
+
+			//Content Area\\
+			$('.contentArea').css({
+				'height' : $(window).height()
+			});
+			//******************************\\
+
+			//Programing Option in side menu\\
+			$('.sideMenuOption#programing').mouseenter(function() {
+				$(".sideMenuSelector#programing").show();
+			});
+
+			$('.sideMenuOption#programing').mouseleave(function() {
+				$(".sideMenuSelector#programing").hide();
+			});
+			//******************************\\
+
+			//Programing Option in side menu\\
+			$('.sideMenuOption#animation').mouseenter(function() {
+				$(".sideMenuSelector#animation").show();
+			});
+
+			$('.sideMenuOption#animation').mouseleave(function() {
+				$(".sideMenuSelector#animation").hide();
+			});
+			//******************************\\
+
+			//Robotics Option in side menu\\
+			$('.sideMenuOption#robotics').mouseenter(function() {
+				$(".sideMenuSelector#robotics").show();
+			});
+
+			$('.sideMenuOption#robotics').mouseleave(function() {
+				$(".sideMenuSelector#robotics").hide();
+			});
+			//******************************\\
+
+			//Other Option in side menu\\
+			$('.sideMenuOption#other').mouseenter(function() {
+				$(".sideMenuSelector#other").show();
+			});
+
+			$('.sideMenuOption#other').mouseleave(function() {
+				$(".sideMenuSelector#other").hide();
+			});
+			//******************************\\
+		</script>
+	</body>
+</html>
